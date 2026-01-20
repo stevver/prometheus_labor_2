@@ -1,0 +1,35 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Virtual env
+venv/
+.venv/
+
+# Logs
+*.log
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.swp
+*.swo
+*~
+*.bak
+
+# Secrets / env
+.env
+.env.*
+
+# Optional: if you ever create local data dirs
+prometheus-data/
+data/
