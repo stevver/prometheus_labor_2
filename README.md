@@ -1,21 +1,20 @@
-# Prometheus Lab 1
+# Prometheus Lab 2
 
-## Host browser
+## Services (Host browser)
 - Prometheus: http://localhost:9090
-- Node Exporter metrics: http://localhost:9100/metrics
-- Python app: http://localhost:5000
-- Python metrics: http://localhost:5001/metrics
+- Node Exporter: http://localhost:9100/metrics
+- Docker Engine metrics: http://localhost:9323/metrics (if forwarded)
+- cAdvisor: http://localhost:8080
+- Alertmanager: http://localhost:9093
+- Grafana: http://localhost:3000
 
-## Run Prometheus + Node Exporter
+## Start stack
 cd docker-compose/prometheus
 docker compose up -d
 
-## Python instrumentation
-cd instrumentation
-python3 -m venv venv
-source venv/bin/activate
-pip install prometheus_client
-python3 httpserver_test.py
-
-## Prometheus config reload
+## Reload Prometheus config
 curl -X POST http://localhost:9090/-/reload
+
+## Notes
+- alertmanager/alertmanager.yml is ignored (contains Slack webhook)
+- Use alertmanager/alertmanager.yml.example as a template
